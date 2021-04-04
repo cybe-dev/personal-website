@@ -1,16 +1,62 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@responsive {
+  .w-640 {
+    width: 640px;
+  }
+  .w-768 {
+    width: 768px;
+  }
+  .w-1024 {
+    width: 1024px;
+  }
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.poppins {
+  font-family: "Poppins", sans-serif;
 }
 
-* {
-  box-sizing: border-box;
+.exo {
+  font-family: "Exo 2", sans-serif;
+}
+
+.navbar li + li {
+  @apply lg:ml-4;
+}
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+.roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+.title {
+  position: relative;
+  @apply pb-3;
+  @apply mb-3;
+}
+
+.title:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 75px;
+  content: "";
+  @apply h-1;
+  @apply bg-primary;
+}
+
+.header-bar:after {
+  @apply w-full;
+  @apply absolute;
+  @apply top-0;
+  @apply left-0;
+  @apply bg-primary;
+  @apply h-64;
+  content: "";
 }
