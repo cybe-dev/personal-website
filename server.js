@@ -2,9 +2,10 @@ const { createServer } = require("http");
 const { parse } = require("url");
 const next = require("next");
 const port = process.env.PORT || 3000;
+const config = require("./next.config");
 
 const dev = process.env.NODE_ENV !== "production";
-const app = next({ dev });
+const app = next({ dev, conf: config });
 const handle = app.getRequestHandler();
 
 app.prepare().then(() => {
